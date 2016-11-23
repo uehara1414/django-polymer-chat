@@ -1,0 +1,20 @@
+{
+  "name": "cardchat",
+  "homepage": "https://github.com/uehara1414/django-polymer-chat",
+  "authors": [
+    "uehara1414 <b1015062@fun.ac.jp>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.23"
+  }
+}

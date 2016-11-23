@@ -90,3 +90,5 @@ ENV/
 
 .idea/
 staticfiles/
+
+bower_components/
