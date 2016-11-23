@@ -43,6 +43,7 @@ ALLOWED_HOSTS = [os.environ['VIRTUAL_HOST']]
 # Application definition
 
 INSTALLED_APPS = [
+    'cardchat.apps.CardchatConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
