@@ -2,39 +2,71 @@
 <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="bower_components/paper-card/paper-card.html">
 <link rel="import" href="bower_components/paper-input/paper-input.html">
+
+<link rel="import" href="bower_components/app-layout/app-layout.html">
+<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="bower_components/app-layout/app-box/app-box.html">
+<link rel="import" href="bower_components/app-layout/app-layout.html">
+<link rel="import" href="bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+
+
 <link rel="import" href="chat-card-mini.html">
 
 
 
 <dom-module id="side-bar">
-    <template>
 
+    <template>
         <iron-ajax auto
                    url="/backend/"
                    handle-as="json"
                    last-response="{{ajaxResponse}}"
                    debounce-duration="300"></iron-ajax>
 
-        <div class="sidebar-title">Filter</div>
-        <paper-input label="#python #js"></paper-input>
-
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-        <chat-card-mini></chat-card-mini>
-
+        <section>
+            <div class="header">
+                <div class="sidebar-title">Filter</div>
+                <paper-input label="#python #js"></paper-input>
+            </div>
+            <paper-dialog-scrollable>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+                <chat-card-mini></chat-card-mini>
+            </paper-dialog-scrollable>
+            <div class="footer">Lewis Carroll</div>
+        </section>
     </template>
+
     <style>
         chat-card-mini {
             width: 100%;
         }
+        section {
+            width: 100%;
+            height: 100%;
+            @apply(--layout-vertical);
+        }
+        section paper-dialog-scrollable {
+            @apply(--layout-flex);
+        }
+        .header {
+            padding: 8px 24px;
+        }
+        .footer {
+            padding: 8px 24px;
+            text-align: right;
+        }
     </style>
+
     <script>
         Polymer({
             is: 'side-bar'

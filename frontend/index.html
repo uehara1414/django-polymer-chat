@@ -8,6 +8,7 @@
     <link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
     <link rel="import" href="bower_components/app-layout/app-header/app-header.html">
     <link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="bower_components/app-layout/app-box/app-box.html">
     <link rel="import" href="bower_components/app-layout/app-layout.html">
     <link rel="import" href="bower_components/paper-icon-button">
     <link rel="import" href="bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
@@ -42,7 +43,14 @@
             </app-toolbar>
         </app-header>
 
-        <chat-card></chat-card>
+        <footer style="position:fixed;bottom:0">
+            aaa
+        </footer>
+
+        <app-box>
+            <chat-card></chat-card>
+        </app-box>
+
 
     </app-header-layout>
 </app-drawer-layout>
