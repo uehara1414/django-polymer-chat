@@ -3,7 +3,7 @@
 <link rel="import" href="bower_components/paper-card/paper-card.html">
 
 
-<dom-module id="hello-world">
+<dom-module id="chat-card-mini">
     <template>
 
         <iron-ajax auto
@@ -17,17 +17,16 @@
                 backend says [[ajaxResponse.status]]
             </p>
         </paper-card>
-        
-        <style>
-            paper-card {
-                text-align: center;
-            }
-        </style>
 
     </template>
+    <style>
+        paper-card {
+            width: 100%;
+        }
+    </style>
     <script>
         Polymer({
-            is: 'hello-world'
+            is: 'chat-card-mini'
         });
     </script>
 

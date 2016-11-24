@@ -1,0 +1,44 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="chat-card-mini.html">
+
+
+
+<dom-module id="side-bar">
+    <template>
+
+        <iron-ajax auto
+                   url="/backend/"
+                   handle-as="json"
+                   last-response="{{ajaxResponse}}"
+                   debounce-duration="300"></iron-ajax>
+
+        <div class="sidebar-title">Filter</div>
+        <paper-input label="#python #js"></paper-input>
+
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+        <chat-card-mini></chat-card-mini>
+
+    </template>
+    <style>
+        chat-card-mini {
+            width: 100%;
+        }
+    </style>
+    <script>
+        Polymer({
+            is: 'side-bar'
+        });
+    </script>
+
+</dom-module>

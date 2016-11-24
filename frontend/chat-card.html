@@ -1,0 +1,52 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+<dom-module id="chat-card">
+    <template>
+
+        <iron-ajax auto
+                   url="/backend/"
+                   handle-as="json"
+                   last-response="{{ajaxResponse}}"
+                   debounce-duration="300"></iron-ajax>
+
+        <paper-card id="mini-card">
+            <div class="container flex-vertical">
+                <p>title</p>
+            </div>
+            <div class="container flex-vertical">
+                <p>backend says [[ajaxResponse.status]]</p>
+            </div>
+            <div class="container flex-end-align">
+                <paper-input label="#python #js"></paper-input>
+            </div>
+
+        </paper-card>
+
+    </template>
+
+    <style>
+        #mini-card {
+            width: 100%;
+            height: 90%;
+        }
+        .flex-vertical {
+            @apply(--layout-vertical);
+        }
+        .flex-end-align {
+            @apply(--layout-end);
+            height: 120px;
+        }
+    </style>
+    <script>
+        Polymer({
+            is: 'chat-card'
+        });
+    </script>
+
+</dom-module>
